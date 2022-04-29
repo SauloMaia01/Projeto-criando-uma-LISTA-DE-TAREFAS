@@ -92,3 +92,7 @@ body {
 .error::placeholder {
     color: red;
 }
+
+.completed {
+    text-decoration: line-through;
+}
