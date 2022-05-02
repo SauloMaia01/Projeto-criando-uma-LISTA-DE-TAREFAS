@@ -70,15 +70,20 @@ body {
 }
 
 .task-item {
+    align-items: center;
+    border-radius: 10px;   
+    border: 1px solid rgba(65, 184, 131, 1);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 6px;
-    margin-top: 6px;    
+    margin-top: 6px; 
+    min-width: 370px;
+    padding-left: 10px;
+    width: 40%;
 }
 
 .task-item i {
-    background-color: #41b883;
+    background-color: #41b883;    
     color: #fff;
     padding: 12px;
     border-radius: 5px;
