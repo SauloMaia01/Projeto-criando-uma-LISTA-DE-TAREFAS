@@ -44,7 +44,7 @@ const handleAddTask = () => {
 
     inputElement.value = "";
 };
-/* childNodes: Pega todos os filhos do tasksContainer */
+/* childNodes: Pega todos os filhos do tasksContainer */  
 const handleClick = (taskContent) => {
     const tasks = tasksContainer.childNodes;
 
