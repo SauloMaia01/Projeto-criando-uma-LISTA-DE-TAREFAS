@@ -22,19 +22,19 @@ const handleAddTask = () => {
         return inputElement.classList.add("error");
     }
 
-    const taskItemContainer = document.createElement('div')
-    taskItemContainer.classList.add("task-item")
+    const taskItemContainer = document.createElement('div');
+    taskItemContainer.classList.add("task-item");
 
-    const taskContent = document.createElement("p")
+    const taskContent = document.createElement("p");
     taskContent.innerText = inputElement.value;
 
-    taskContent.addEventListener("click", () => handleClick(taskContent))
+    taskContent.addEventListener("click", () => handleClick(taskContent));
 
     const deleteItem = document.createElement("i");
     deleteItem.classList.add("far");
     deleteItem.classList.add("fa-trash-alt");
 
-    deleteItem.addEventListener("click", () => handleDeleteClick(taskItemContainer, taskContent))
+    deleteItem.addEventListener("click", () => handleDeleteClick(taskItemContainer, taskContent));
 
     /* appendChild : insere um elemento filho (children) ao elemento pai (parent) na última posição, ela auxilia na criação de um elemento DOM */
     taskItemContainer.appendChild(taskContent);
@@ -44,6 +44,7 @@ const handleAddTask = () => {
 
     inputElement.value = "";
 };
+
 /* childNodes: Pega todos os filhos do tasksContainer */  
 const handleClick = (taskContent) => {
     const tasks = tasksContainer.childNodes;
@@ -55,10 +56,20 @@ const handleClick = (taskContent) => {
     }
 };
 
+const handleDeleteClick = (taskItemContainer, taskContent) => {
+    const tasks = tasksContainer.childNodes;
+
+    for (const task of tasks) {
+        if (task.firstChild.isSameNode(taskContent)) {
+            taskItemContainer.remove();
+        }
+    }
+};
+
 const handleInputChange = () => {
     const inputIsValid = validateInput();
 
-    if (!inputIsValid) {
+    if (inputIsValid) {
         return inputElement.classList.remove("error");
     }
 };
