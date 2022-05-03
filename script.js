@@ -22,7 +22,7 @@ const handleAddTask = () => {
         return inputElement.classList.add("error");
     }
 
-    const taskItemContainer = document.createElement('div');
+    const taskItemContainer = document.createElement("div");
     taskItemContainer.classList.add("task-item");
 
     const taskContent = document.createElement("p");
@@ -50,6 +50,9 @@ const handleClick = (taskContent) => {
     const tasks = tasksContainer.childNodes;
 
     for (const task of tasks) {
+
+        const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskContent);
+
         if (task.firstChild.isSameNode(taskContent)) {
             task.firstChild.classList.toggle("completed");
         }
@@ -60,6 +63,9 @@ const handleDeleteClick = (taskItemContainer, taskContent) => {
     const tasks = tasksContainer.childNodes;
 
     for (const task of tasks) {
+
+        const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskContent);
+        
         if (task.firstChild.isSameNode(taskContent)) {
             taskItemContainer.remove();
         }
